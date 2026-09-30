@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【ピースウォーカー】工作員持ちの実戦Sランク完全検証｜入手条件・能力値アルゴリズム・確率【MGSPW マスターコレクション】</title>
+<meta name="description" content="MGSピースウォーカー（マスターコレクションVol.2・Switch 2版）で、工作員持ちの実戦Sランク兵士は手に入るのか。英雄度カンスト・ミッションクリア14,000回以上の検証データと海外の解析をもとに、工作員が付く条件、入手ルート、能力値とスキルのアルゴリズム、確率まで詳しく解説します。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【ピースウォーカー】工作員持ちの実戦Sランク完全検証">
+<meta property="og:description" content="工作員が付く条件、入手ルート、能力値とスキルのアルゴリズム、確率まで。マスターコレクションVol.2（Switch 2版）で、英雄度カンスト・ミッション14,000回以上の検証データをもとに解説。">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="game">METAL GEAR SOLID PEACE WALKER<br><span style="white-space:nowrap">MASTER COLLECTION Vol.2</span> ／ <span style="white-space:nowrap">Nintendo Switch 2</span></p>
+  <h1>工作員持ちの実戦Sランクを狙う</h1>
+  <p class="lead">大型兵器戦で活躍するスキル「工作員」。その持ち主で、実戦パラメータが全てSの兵士は手に入るのか。マスターコレクションVol.2のNintendo Switch 2版で、英雄度カンスト（999999）・ミッションクリア14,000回以上の検証データと、海外で解析された能力値・スキルのアルゴリズムをもとに、条件・入手ルート・確率まですべてまとめました。</p>
+  <figure style="margin:0">
+    <button class="frame" aria-label="MOUFLONのステータス画面を拡大"><img src="img/mouflon.jpg" alt="MOUFLONのステータス画面。ゲリラ兵、工作員・囮・腰巾着持ち"></button>
+    <figcaption>工作員持ちのゲリラ兵「MOUFLON」。実戦Sランクを狙える唯一の兵種です</figcaption>
+  </figure>
+</header>
+
+<section class="answer" aria-labelledby="ans">
+  <h2 id="ans">先に結論</h2>
+  <ul>
+    <li>工作員持ちの実戦Sランクを狙えるのは<strong>ゲリラ兵だけ</strong></li>
+    <li>入手ルートは<strong>ミッション後の志願兵</strong>が本命</li>
+    <li>壁は<strong>CQC攻撃力</strong>。ゲリラ兵ならSが出る</li>
+    <li>確率は内部ランクSのゲリラ兵1人あたり<strong>約0.08%（約1300人に1人）</strong>。理論上は可能だが、国内外ともに入手報告はまだない</li>
+  </ul>
+</section>
+
+<section class="author" aria-labelledby="au">
+  <h2 id="au">この記事を書いた人</h2>
+  <div class="author-body">
+    <button class="frame" aria-label="プレイヤーデータを拡大"><img src="img/profile.jpg" alt="プレイヤーデータ。英雄度999999、クリアミッション数14118、CO-OPSクリア数233"></button>
+    <div>
+      <p class="au-name">tigo</p>
+      <dl class="stats">
+        <div><dt>英雄度</dt><dd>999999</dd></div>
+        <div><dt>クリアミッション数</dt><dd>14118</dd></div>
+        <div><dt>CO-OPSクリア数</dt><dd>233</dd></div>
+        <div><dt>プレイ環境</dt><dd class="env">マスターコレクションVol.2（Nintendo Switch 2版）</dd></div>
+      </dl>
+    </div>
+  </div>
+  <p>英雄度をカンストさせ、ミッションを14,000回以上クリアしながら、工作員持ちの実戦Sランクを探し続けています。この記事のデータは、すべて自分で集めた志願兵をもとにしています。</p>
+</section>
+
+<nav class="toc" aria-label="目次">
+  <p>目次</p>
+  <ol>
+    <li><a href="#effect">工作員の効果</a></li>
+    <li><a href="#screen">兵士画面の見方と「実戦Sランク」</a></li>
+    <li><a href="#algo">能力値のアルゴリズム</a></li>
+    <li><a href="#skill">スキルのアルゴリズム</a></li>
+    <li><a href="#classes">兵種ごとの可能性</a></li>
+    <li><a href="#routes">入手ルートの評価</a></li>
+    <li><a href="#recruit">リクルートとコマンド兵</a></li>
+    <li><a href="#data">検証データ</a></li>
+    <li><a href="#prob">確率の計算</a></li>
+    <li><a href="#morale">士気を上げる方法</a></li>
+    <li><a href="#growth">パラメータの成長について</a></li>
+    <li><a href="#weapons">OUTER OPSでの兵種ごとの武器</a></li>
+    <li><a href="#conclusion">結論</a></li>
+  </ol>
+</nav>
+
+<section>
+<h2 id="effect">工作員の効果</h2>
+<p><strong>ミッション効果</strong>：大型兵器・AI兵器への攻撃で大ダメージを与える確率がアップし、設置武器の設置速度もアップします。</p>
+<p><strong>マザーベース効果</strong>：研究開発班に配属すると、大型兵器とメタルギアZEKEを修理する時の回復量がアップします。</p>
+<p>大型兵器戦を中心に遊ぶなら、操作キャラにも実戦部隊にも欲しいスキルです。</p>
+</section>
+
+<section>
+<h2 id="screen">兵士画面の見方と「実戦Sランク」</h2>
+<figure>
+  <button class="frame" aria-label="TARPONのパラメータ部分を拡大"><img src="img/tarpon-bars.jpg" alt="TARPONのパラメータ欄"></button>
+  <figcaption>左の5本が班適性、間を空けて右の8本が実戦パラメータ、一番右の人型が士気アイコン</figcaption>
+</figure>
+
+<h3>パラメータ</h3>
+<ul>
+  <li><strong>左5項目</strong>：戦闘・研究開発・糧食・医療・諜報の各班の適性。実戦の強さとは関係ありません。</li>
+  <li><strong>右8項目</strong>：射撃・リロード・投擲・設置・歩き・走り・CQC攻撃力・防御力の実戦パラメータ。この8項目がすべてSの状態を、この記事では<strong>「実戦Sランク」</strong>と呼びます。</li>
+</ul>
+
+<h3>ゲージの色</h3>
+<div class="legend">
+  <span><i class="sw" style="background:var(--red)"></i>赤：素の値</span>
+  <span><i class="sw" style="background:var(--orange)"></i>オレンジ：士気ボーナス</span>
+  <span><i class="sw" style="background:var(--panel)"></i>黒：届いていない部分</span>
+</div>
+<p>表示されるランク（S〜E）は、赤とオレンジを足した長さで決まります。</p>
+
+<h3>一番右の人型アイコン</h3>
+<p>士気の段階を表すアイコンです。加入直後は矢印1本で、士気が上がるにつれて矢印が増え、オレンジのゲージも伸びます。4重矢印が最大です（筆者検証）。</p>
+<p>下は、加入直後の偵察兵FENNEC（矢印1本）と、士気が最大の偵察兵CIVET（4重矢印）の比較です。CIVETはどの項目もオレンジの部分が長く、士気ボーナスが大きく乗っているのが分かります。</p>
+<div class="pair">
+  <figure style="margin:0">
+    <div class="cap">加入直後（FENNEC）</div>
+    <button class="frame" aria-label="FENNEC加入直後のパラメータを拡大"><img src="img/fennec-bars-new.jpg" alt="FENNEC加入直後。右8項目はS S A S A S B B"></button>
+  </figure>
+  <figure style="margin:0">
+    <div class="cap">士気最大（CIVET）</div>
+    <button class="frame" aria-label="士気最大のCIVETのパラメータを拡大"><img src="img/civet-bars.jpg" alt="士気最大のCIVET。士気アイコンは4重矢印"></button>
+  </figure>
+</div>
+</section>
+
+<section>
+<h2 id="algo">能力値のアルゴリズム</h2>
+<p>海外の攻略掲示板GameFAQsに、PSP版の兵士の能力値の計算方法を解析した投稿があります。マスターコレクション版でも同じ仕組みと仮定すると、これまでの検証結果がかなりきれいに説明できます。</p>
+
+<h3>計算の流れ</h3>
+<ol>
+  <li><strong>兵種ごとの基本値</strong>が決まっている</li>
+  <li>加入時に<strong>±40%の乱数</strong>がかかる</li>
+  <li>画面に出ない<strong>内部ランクの倍率</strong>をかける</li>
+  <li>出た数値で<strong>表示ランク</strong>が決まる</li>
+</ol>
+<div class="formula">能力値 ＝ 基本値 × (1 ± <span class="r">乱数</span>) × 内部ランク倍率</div>
+
+<h3>ゲリラ兵の基本値</h3>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>項目</th><th>基本値</th></tr></thead>
+  <tbody>
+    <tr><td>射撃・リロード・投擲・設置・歩き・走り</td><td class="num">275</td></tr>
+    <tr><td>防御</td><td class="num">225</td></tr>
+    <tr class="hl"><td>CQC</td><td class="num">200</td></tr>
+  </tbody>
+</table></div>
+
+<h3>内部ランクの倍率と表示ランク</h3>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>内部ランク</th><th>倍率</th><th>計算後の数値</th><th>表示ランク</th></tr></thead>
+  <tbody>
+    <tr><td class="num">S</td><td class="num">×5</td><td class="num">1250以上</td><td class="num">S</td></tr>
+    <tr><td class="num">A</td><td class="num">×4</td><td class="num">1000〜1249</td><td class="num">A</td></tr>
+    <tr><td class="num">B</td><td class="num">×3</td><td class="num">750〜999</td><td class="num">B</td></tr>
+    <tr><td class="num">C</td><td class="num">×2</td><td class="num">500〜749</td><td class="num">C</td></tr>
+    <tr><td class="num">D</td><td class="num">×1</td><td class="num">250〜499</td><td class="num">D</td></tr>
+    <tr><td class="num">E</td><td class="num">×0.5</td><td class="num">249以下</td><td class="num">E</td></tr>
+  </tbody>
+</table></div>
+<p class="note">内部ランクと表示ランクは別物です。内部ランクは画面には表示されません。</p>
+
+<h3>内部ランクSのゲリラ兵の場合</h3>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>項目</th><th>基本値×5</th><th>Sに必要な乱数</th></tr></thead>
+  <tbody>
+    <tr><td>射撃など6項目</td><td class="num">1375</td><td>−9%以上</td></tr>
+    <tr><td>防御</td><td class="num">1125</td><td>+11%以上</td></tr>
+    <tr class="hl"><td>CQC</td><td class="num">1000</td><td><strong>+25%以上</strong></td></tr>
+  </tbody>
+</table></div>
+<p><strong>CQCの基本値が一番低いため、ここが実戦Sランクの最大の壁</strong>です。これまでの工作員持ちがCQC攻撃力Aで止まっていたこととも一致します。</p>
+
+<h3>乱数は項目ごとに別々</h3>
+<p>解析の書き方だと乱数は全項目共通にも読めますが、筆者のゲリラ兵にはCQCがS（+25%以上）なのに防御がB（−11%以下）の個体がいます。そのため、<strong>乱数は項目ごとに別々にかかっている</strong>と考えられます。</p>
+
+<h3>ゲリラ兵以外の乱数</h3>
+<p>解析では「±40%の乱数があるのはゲリラ兵だけ」とされています。ただ、ミッション後の志願兵では偵察兵・整備兵でも右端2つに個体差があったので、筆者は<strong>ゲリラ兵以外にも小さめの乱数がある</strong>と考えています。</p>
+</section>
+
+<section>
+<h2 id="skill">スキルのアルゴリズム</h2>
+<p>同じ解析によると、スキルは<strong>内部ランクと兵種</strong>で決まります。兵種ごとに覚えられるスキルが決まっていて、それ以外のスキルは絶対に付きません。</p>
+
+<h3>内部ランクごとのスキル数</h3>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>内部ランク</th><th>1個以上</th><th>2個以上</th><th>3個以上</th><th>4個</th></tr></thead>
+  <tbody>
+    <tr><td class="num">S</td><td>80%</td><td>48%</td><td>19.2%</td><td>3.8%</td></tr>
+    <tr><td class="num">A</td><td>70%</td><td>36.8%</td><td>12.9%</td><td>−</td></tr>
+    <tr><td class="num">B</td><td>60%</td><td>27%</td><td>−</td><td>−</td></tr>
+    <tr><td class="num">C</td><td>50%</td><td>−</td><td>−</td><td>−</td></tr>
+    <tr><td class="num">D以下</td><td>スキルなし</td><td>−</td><td>−</td><td>−</td></tr>
+  </tbody>
+</table></div>
+
+<h3>工作員が付く兵種</h3>
+<div class="classes">
+  <div><div class="rank ok">S</div><div class="cls">ゲリラ兵</div><div class="desc">内部ランクSのときだけ付く</div></div>
+  <div><div class="rank">B〜</div><div class="cls">コマンダー</div><div class="desc">内部ランクB以上で付く</div></div>
+  <div><div class="rank">A〜</div><div class="cls">偵察兵</div><div class="desc">内部ランクA以上で付く</div></div>
+  <div><div class="rank">A〜</div><div class="cls">整備兵</div><div class="desc">内部ランクA以上で付く</div></div>
+</div>
+<p class="note">攻略サイトの表にある「ゲリラ兵:S」の「S」は、実戦や研究の適性ではなく、この内部ランクのことです。実際、工作員持ちのMOUFLONは左端の戦闘適性がAです。</p>
+
+<h3>ゲリラ兵が覚えるスキル（全7種）</h3>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>スキル</th><th>内部ランク</th></tr></thead>
+  <tbody>
+    <tr class="hl"><td>工作員</td><td class="num">S</td></tr>
+    <tr><td>無線技術</td><td class="num">S</td></tr>
+    <tr><td>囮</td><td class="num">A〜</td></tr>
+    <tr><td>チャネラー</td><td class="num">A〜</td></tr>
+    <tr><td>熱血漢</td><td class="num">A〜</td></tr>
+    <tr><td>レスキュー</td><td class="num">A〜</td></tr>
+    <tr><td>腰巾着</td><td class="num">B〜</td></tr>
+  </tbody>
+</table></div>
+<p>工作員は7種類のスキルと枠を取り合うので、内部ランクSのゲリラ兵でも付くのは一部だけです。</p>
+</section>
+
+<section>
+<h2 id="classes">兵種ごとの可能性</h2>
+<div class="classes">
+  <div><div class="rank ok">◎</div><div class="cls">ゲリラ兵</div><div class="desc">大きな乱数があり、CQC攻撃力もSになる。唯一の本命</div></div>
+  <div><div class="rank ng">×</div><div class="cls">コマンダー</div><div class="desc">リロードが必ずBなので実戦Sランクになれない</div></div>
+  <div><div class="rank ng">×</div><div class="cls">偵察兵</div><div class="desc">CQC攻撃力が最高A。防御もBが多い</div></div>
+  <div><div class="rank ng">×</div><div class="cls">整備兵</div><div class="desc">防御はSになるが、CQC攻撃力が最高A</div></div>
+</div>
+</section>
+
+<section>
+<h2 id="routes">入手ルートの評価</h2>
+<p>「工作員持ちの実戦Sランク」を狙えるかどうかで評価しています。</p>
+
+<div class="route">
+  <div class="mark good" aria-label="有効">◎</div>
+  <div>
+    <h3>ミッション後の志願兵</h3>
+    <p>工作員持ちで<strong>実戦Sランク</strong>を狙うなら、<strong>実質これ一択</strong>です。ゲリラ兵・偵察兵・整備兵の工作員持ちが来ることを確認しています。</p>
+    <p>英雄度が高いほど能力の高い兵士が来やすくなります。英雄度は50万を超えても効果があるようで、50万の頃は右8項目のSが1〜2個程度だったのが、カンスト（999999）ではS4個以上の兵士が普通に来るようになりました（筆者の体感）。</p>
+  </div>
+</div>
+
+<div class="route">
+  <div class="mark mid" aria-label="条件付き">△</div>
+  <div>
+    <h3>OUTER OPS「敵拠点の制圧02(SS)」</h3>
+    <p>高ランクの工作員持ち（偵察兵タイプ）は来ますが、何度周回しても右端2つ（CQC攻撃力・防御力）が<strong>必ずB〜C</strong>になるため、実戦Sランクは狙えません。</p>
+    <p>アルゴリズムから考えると、偵察兵のCQC・防御の基本値が低めで、ゲリラ兵ほど大きな乱数もかからないため、内部ランクがSやAでも計算結果がBの範囲に収まってしまうのだと推測できます。02は来る兵士の内部ランクがほぼ一定なので、毎回同じB止まりになっているのかもしれません。</p>
+  </div>
+</div>
+
+<div class="route">
+  <div class="mark bad" aria-label="対象外">×</div>
+  <div>
+    <h3>MAIN OPS「採掘場偽装基地へ」</h3>
+    <p>スタート地点近くのはしごを登った先の屋根から東を向き、エリア外にいる敵兵をフルトン回収すると、工作員持ちの兵士が手に入ります。工作員持ちを確実に1人確保するならアリですが、実戦Sランクには届きません。</p>
+  </div>
+</div>
+
+<div class="route last">
+  <div class="mark bad" aria-label="対象外">×</div>
+  <div>
+    <h3>リクルート</h3>
+    <p>来る兵士は<strong>全員コマンド兵</strong>になり、コマンド兵は工作員を覚えないため、絶対に出ません。詳しくは次の章で説明します。</p>
+  </div>
+</div>
+</section>
+
+<section>
+<h2 id="recruit">リクルートとコマンド兵</h2>
+<p>リクルートで来る兵士は全員コマンド兵です。名前が似ている「コマンダー」とは別の兵種なので注意してください。ネット上には「リクルートで工作員が出た」という書き込みもありますが、記憶ベースの曖昧なものばかりで、フルトン回収や志願兵と混同していると考えられます。また、リクルートでは諜報が高い兵士も出ないようです。</p>
+<p class="note">PSP版では、リクルートでゲリラ兵ベースやコマンダーの兵士も出ていたという報告があり、マスターコレクション版とは仕様が違う可能性があります（筆者のマスターコレクション版では、リクルートは全員コマンド兵でした）。</p>
+
+<h3>コマンド兵に付くスキル（全7種）</h3>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>スキル</th><th>ランク</th><th>効果</th></tr></thead>
+  <tbody>
+    <tr><td>SWAT</td><td class="num">S</td><td>CQC攻撃力アップ、敵の手足へのダメージアップ、ローリングで敵をダウン、スネークシンクロ短縮</td></tr>
+    <tr><td>グリーンベレー</td><td class="num">S</td><td>CQC攻撃力アップ、射撃で大ダメージが出やすい、LIFE自然回復アップ。所持者が多いほど効果が増える</td></tr>
+    <tr><td>プロレスマニア</td><td class="num">A〜</td><td>CQC攻撃力アップ、CQCで倒した敵の持ち物が全部出る、気絶からの回復が早い</td></tr>
+    <tr><td>チャネラー</td><td class="num">A〜</td><td>アイテムと捕虜の位置が詳細マップに表示される</td></tr>
+    <tr><td>熱血漢</td><td class="num">A〜</td><td>気力の自然回復アップ、一部の言霊の効果アップ</td></tr>
+    <tr><td>囮</td><td class="num">B〜</td><td>敵に狙われやすい代わりに、狙われている間は気力回復＋防御力アップ。盾使用時はガード効果</td></tr>
+    <tr><td>腰巾着</td><td class="num">B〜</td><td>味方が敵を無力化すると「さすがです!」で気力回復。発動するとクリアランクSが取れなくなる</td></tr>
+  </tbody>
+</table></div>
+<p class="note">SWAT・グリーンベレー・プロレスマニアのCQC攻撃力アップは重複しません。</p>
+
+<h3>英雄度とSランク兵の出現率（参考）</h3>
+<p>海外の解析では英雄度50万以上でリクルートの兵士は内部ランクSが90%、国内の知恵袋でも同様の数字（50万1以上で90%）が挙がっています。ただし、ミッション後の志願兵では50万以上でも質が上がり続けた体感があるので、志願兵には別の仕組みがあるのかもしれません。</p>
+</section>
+
+<section>
+<h2 id="data">検証データ</h2>
+<p>英雄度カンスト・士気最大の状態で、右8項目を比較しました。何人かピックアップして掲載します。すべてミッション後の志願兵です。各グループの1番目の兵士だけを表示しています。ボタンを押すと残りの兵士も見られます。画像をタップすると元のステータス画面を拡大できます。</p>
+<div class="legend">
+  <span><i class="sw" style="background:var(--red)"></i>S</span>
+  <span><i class="sw" style="background:var(--a)"></i>A</span>
+  <span><i class="sw" style="background:var(--b)"></i>B</span>
+  <span><i class="sw" style="outline:2px solid var(--ink);background:transparent"></i>CQC攻撃力・防御力</span>
+</div>
+
+<h3>工作員持ち8人</h3>
+<div class="roster">
+<article class="soldier">
+  <button class="thumb" aria-label="CIVETのステータス画面を拡大"><img src="img/civet.jpg" alt="CIVETのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">CIVET<span>偵察兵</span><span class="tag on">工作員あり</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：S S S S S S A A"><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rA key" style="--h:74%"><i></i><b>A</b></span><span class="bar rA key" style="--h:74%"><i></i><b>A</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S6　A2　B0<br>スキル：工作員・声優・無線技術</p>
+  </div>
+</article>
+</div>
+<details class="more">
+<summary><span class="open-t">残り7人を見る</span><span class="close-t">閉じる</span></summary>
+<div class="roster">
+<article class="soldier">
+  <button class="thumb" aria-label="MOUFLONのステータス画面を拡大"><img src="img/mouflon.jpg" alt="MOUFLONのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">MOUFLON<span>ゲリラ兵</span><span class="tag on">工作員あり</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：S S A S S S B S"><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span><span class="bar rS key" style="--h:100%"><i></i><b>S</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S6　A1　B1<br>スキル：工作員・囮・腰巾着</p>
+  </div>
+</article>
+<article class="soldier">
+  <button class="thumb" aria-label="FENNECのステータス画面を拡大"><img src="img/fennec.jpg" alt="FENNECのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">FENNEC<span>偵察兵</span><span class="tag on">工作員あり</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：S S S S S S B B"><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S6　A0　B2<br>スキル：工作員・声優・バーダー</p>
+  </div>
+</article>
+<article class="soldier">
+  <button class="thumb" aria-label="DODOのステータス画面を拡大"><img src="img/dodo.jpg" alt="DODOのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">DODO<span>整備兵</span><span class="tag on">工作員あり</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：B S S S S A B S"><span class="bar rB" style="--h:50%"><i></i><b>B</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span><span class="bar rS key" style="--h:100%"><i></i><b>S</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S5　A1　B2<br>スキル：工作員・対戦車ライフル設計・ガンスミス（ショットガン）</p>
+  </div>
+</article>
+<article class="soldier">
+  <button class="thumb" aria-label="BLESBOKのステータス画面を拡大"><img src="img/blesbok.jpg" alt="BLESBOKのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">BLESBOK<span>偵察兵</span><span class="tag on">工作員あり</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：S A S S S S B B"><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S5　A1　B2<br>スキル：工作員・声優・無線技術</p>
+  </div>
+</article>
+<article class="soldier">
+  <button class="thumb" aria-label="WOODCOCKのステータス画面を拡大"><img src="img/woodcock.jpg" alt="WOODCOCKのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">WOODCOCK<span>整備兵</span><span class="tag on">工作員あり</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：A S S A A S B S"><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span><span class="bar rS key" style="--h:100%"><i></i><b>S</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S4　A3　B1<br>スキル：工作員・対戦車ライフル設計</p>
+  </div>
+</article>
+<article class="soldier">
+  <button class="thumb" aria-label="SEA-OTTERのステータス画面を拡大"><img src="img/sea-otter.jpg" alt="SEA-OTTERのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">SEA-OTTER<span>整備兵</span><span class="tag on">工作員あり</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：B A S S S A A S"><span class="bar rB" style="--h:50%"><i></i><b>B</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rA key" style="--h:74%"><i></i><b>A</b></span><span class="bar rS key" style="--h:100%"><i></i><b>S</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S4　A3　B1<br>スキル：工作員・対戦車ライフル設計・ガンスミス（SMG）</p>
+  </div>
+</article>
+<article class="soldier">
+  <button class="thumb" aria-label="BLENNYのステータス画面を拡大"><img src="img/blenny.jpg" alt="BLENNYのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">BLENNY<span>偵察兵</span><span class="tag on">工作員あり</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：A S S S A A B B"><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S3　A3　B2<br>スキル：工作員・バーダー・対戦車ライフル設計</p>
+  </div>
+</article>
+</div>
+</details>
+<ul>
+  <li>S数の最高は6個。<strong>CIVETはBが1つもなく、工作員持ちで一番能力が高い</strong></li>
+  <li><strong>CQC攻撃力は全員最高でもA</strong></li>
+  <li>整備兵は防御が全員S、偵察兵は防御がBになりやすい</li>
+  <li>偵察兵は左5項目がA C B C S、整備兵はA S B C Cでほぼ固定</li>
+</ul>
+
+<h3>ゲリラ兵4人</h3>
+<div class="roster">
+<article class="soldier">
+  <button class="thumb" aria-label="ANTEATERのステータス画面を拡大"><img src="img/anteater.jpg" alt="ANTEATERのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">ANTEATER<span>ゲリラ兵</span><span class="tag">工作員なし</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：S A S S S S S S"><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS key" style="--h:100%"><i></i><b>S</b></span><span class="bar rS key" style="--h:100%"><i></i><b>S</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S7　A1　B0<br>スキル：無線技術・レスキュー・腰巾着</p>
+  </div>
+</article>
+</div>
+<details class="more">
+<summary><span class="open-t">残り3人を見る</span><span class="close-t">閉じる</span></summary>
+<div class="roster">
+<article class="soldier">
+  <button class="thumb" aria-label="SEA PERCHのステータス画面を拡大"><img src="img/sea-perch.jpg" alt="SEA PERCHのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">SEA PERCH<span>ゲリラ兵</span><span class="tag">工作員なし</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：S S S S S S S B"><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS key" style="--h:100%"><i></i><b>S</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S7　A0　B1<br>スキル：囮・無線技術</p>
+  </div>
+</article>
+<article class="soldier">
+  <button class="thumb" aria-label="TARPONのステータス画面を拡大"><img src="img/tarpon.jpg" alt="TARPONのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">TARPON<span>ゲリラ兵</span><span class="tag">工作員なし</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：S S S S A S S A"><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS key" style="--h:100%"><i></i><b>S</b></span><span class="bar rA key" style="--h:74%"><i></i><b>A</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S6　A2　B0<br>スキル：熱血漢・腰巾着・無線技術</p>
+  </div>
+</article>
+<article class="soldier">
+  <button class="thumb" aria-label="MOUFLONのステータス画面を拡大"><img src="img/mouflon.jpg" alt="MOUFLONのステータス画面" loading="lazy"></button>
+  <div class="s-body">
+    <h3 class="s-name">MOUFLON<span>ゲリラ兵</span><span class="tag on">工作員あり</span></h3>
+    <div class="bars" role="img" aria-label="実戦パラメータ：S S A S S S B S"><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rA" style="--h:74%"><i></i><b>A</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rS" style="--h:100%"><i></i><b>S</b></span><span class="bar rB key" style="--h:50%"><i></i><b>B</b></span><span class="bar rS key" style="--h:100%"><i></i><b>S</b></span></div>
+    <div class="bar-labels" aria-hidden="true"><span>射撃</span><span>リロード</span><span>投擲</span><span>設置</span><span>歩き</span><span>走り</span><span>CQC</span><span>防御</span></div>
+    <p class="s-meta">S6　A1　B1<br>スキル：工作員・囮・腰巾着</p>
+  </div>
+</article>
+</div>
+</details>
+<ul>
+  <li><strong>4人中3人がCQC攻撃力S</strong>。偵察兵・整備兵では一度も出なかった</li>
+  <li>ANTEATERとSEA PERCHは<strong>S7</strong>で、実戦Sランクまであと1項目</li>
+  <li>SEA PERCHはCQCがSなのに防御がB。乱数が項目ごとに別々である根拠</li>
+  <li>スキルは無線技術・腰巾着・囮・熱血漢・レスキューなど。工作員はMOUFLONだけ</li>
+  <li>左5項目は個体ごとに違うが、全員が糧食Sと医療S</li>
+</ul>
+</section>
+
+<section>
+<h2 id="prob">確率の計算</h2>
+<p>「<strong>内部ランクSのゲリラ兵が1人来たとき</strong>」に、工作員持ちの実戦Sランクになる確率を計算しました。</p>
+
+<h3>実戦Sランクになる確率</h3>
+<p>乱数が−40%〜+40%で均等に、項目ごとに別々に出ると仮定します。各項目がSになる確率は「必要な乱数から+40%までの幅 ÷ 全体の幅80%」です。</p>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>項目</th><th>必要な乱数</th><th>計算</th><th>確率</th></tr></thead>
+  <tbody>
+    <tr><td>射撃など6項目</td><td>−9%以上</td><td>49÷80</td><td class="num">61.4%</td></tr>
+    <tr><td>防御</td><td>+11%以上</td><td>29÷80</td><td class="num">36.1%</td></tr>
+    <tr class="hl"><td>CQC</td><td>+25%以上</td><td>15÷80</td><td class="num">18.8%</td></tr>
+  </tbody>
+</table></div>
+<div class="formula">0.614⁶ × 0.361 × 0.188 ≈ <span class="r">0.36%</span>（約280人に1人）</div>
+
+<h3>工作員が付く確率</h3>
+<p>スキル数の表から、内部ランクSの兵士が持つスキルは平均で約1.5個（0.8＋0.48＋0.192＋0.038）。ゲリラ兵が覚えるスキルは7種類なので：</p>
+<div class="formula">1.51 ÷ 7 ≈ <span class="r">22%</span></div>
+
+<h3>合計</h3>
+<div class="formula">0.36% × 22% ≈ <span class="r">0.08%</span>（約1300人に1人）</div>
+
+<div class="box warn">
+  <p><strong>この計算の注意点</strong></p>
+  <p>この計算には士気ボーナスが入っていません。実際には士気でAがSに上がる項目もあるので、確率はもう少し高くなると考えられます。</p>
+  <p>また、これは「内部ランクSのゲリラ兵が来た場合」の確率です。志願兵全体から見ると、ゲリラ兵が来る確率と、内部ランクSになる確率の分だけさらに下がります。</p>
+</div>
+</section>
+
+<section>
+<h2 id="morale">士気を上げる方法</h2>
+<p>士気が上がるとオレンジの補正が伸び、Aの項目がSに届くこともあります。</p>
+<ul>
+  <li><strong>糧食班を充実させる</strong>：食糧供給率が100%を超えると士気が上がります。</li>
+  <li><strong>ミラーを同じ班に入れる</strong>：ミラー専用スキル「マザーベース副司令」で、配属した班の全スタッフの士気がアップします。</li>
+  <li><strong>パスを糧食班に入れる</strong>：MSF全スタッフの士気がアップします。</li>
+  <li><strong>アマンダを実戦部隊に入れる</strong>：アマンダ専用スキル「FSLNコマンダンテ」で、ゲリラ兵の士気がアップします。<strong>ゲリラ兵狙いなら必須</strong>です。</li>
+</ul>
+</section>
+
+<section>
+<h2 id="growth">パラメータの成長について</h2>
+<p>士気以外で右8項目を伸ばす方法は確認できていません。OUTER OPSに出撃させて伸びるのはLIFE・MNTL・GMPで、パラメータは伸びないようです。つまり、<strong>志願してきた時点の能力がほぼ最終形</strong>です。</p>
+</section>
+
+<section>
+<h2 id="weapons">OUTER OPSでの兵種ごとの武器</h2>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>兵種</th><th>武器</th></tr></thead>
+  <tbody>
+    <tr><td>コマンダー・ゲリラ兵</td><td>WA2000、M47</td></tr>
+    <tr><td>コマンド兵・エリートコマンド兵</td><td>カンプピストル、M47</td></tr>
+    <tr><td>偵察兵</td><td>M134、グレネード</td></tr>
+  </tbody>
+</table></div>
+<p>兵士に対する最大ダメージはM47が20000、M134が15000、カンプピストルが12000とされていて、ゲリラ兵は火力面でも有利です。</p>
+</section>
+
+<section>
+<h2 id="conclusion">結論</h2>
+<div class="conclusion">
+  <p>工作員持ちの実戦Sランクは、<strong>ゲリラ兵なら理論上あり得ます</strong>。</p>
+  <p>ゲリラ兵は大きな乱数によってCQC攻撃力もSになり、S7の個体も確認できています。工作員付きのゲリラ兵（MOUFLON）も実在します。ただし、内部ランクSのゲリラ兵でも確率は約0.08%（士気なしの計算）と低く、国内外ともにまだ入手報告はありません。</p>
+  <p>狙うなら、<strong>英雄度を上げて、アマンダ・ミラー・パスで士気を最大にし、ミッション後の志願兵のゲリラ兵を見続ける</strong>のが唯一の方法です。</p>
+</div>
+</section>
+
+<footer>
+  <p class="contact">筆者：tigo（X：<a href="https://x.com/szk_saj" rel="me noopener" target="_blank">@szk_saj</a>）<br>情報提供や、工作員持ちの実戦Sランクを見つけた方はぜひご連絡ください。</p>
+  <p>※検証はすべてマスターコレクションVol.2（Nintendo Switch 2版）で行っています。能力値・スキルのアルゴリズムはPSP版の解析で、マスターコレクション版で同じかは未確定です。ゲージの色や士気アイコンの意味、兵種ごとの傾向、確率計算などは筆者の検証による推測を含みます。</p>
+  <p>参考</p>
+  <ul>
+    <li><a href="https://gamefaqs.gamespot.com/boards/960566-metal-gear-solid-peace-walker/56674265">GameFAQs：Best Possible Combat Soldier（能力値・スキルの解析）</a></li>
+    <li><a href="https://appmedia.jp/mgspw/80325514">AppMedia：スキル一覧</a></li>
+    <li><a href="https://w.atwiki.jp/2chmgspw/pages/40.html">2chまとめWiki：兵士スキル一覧</a></li>
+    <li><a href="https://w.atwiki.jp/2chmgspw/pages/60.html">2chまとめWiki：リクルート</a></li>
+    <li><a href="https://w.atwiki.jp/2chmgspw/pages/33.html">2chまとめWiki：アウターオプス</a></li>
+    <li><a href="https://darage.com/enjoygame/mgspw/db10.html">MGSPW攻略ページ：A＆Sランク兵士の場所</a></li>
+    <li><a href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1298776277">Yahoo!知恵袋：工作員持ちの兵士の入手先</a></li>
+  </ul>
+</footer>
+
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="画像の拡大表示">
+  <button type="button" id="lbClose">閉じる</button>
+  <img id="lbImg" alt="">
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
