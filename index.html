@@ -34,8 +34,8 @@
     <li>入手ルートは<strong>ミッション後の志願兵</strong>が本命</li>
     <li>壁は<strong>CQC攻撃力</strong>。ゲリラ兵ならSが出る</li>
     <li>偵察兵・整備兵はCQC攻撃力が<strong>どう引いてもAで頭打ち</strong>（ゲージ実測で確認）</li>
-    <li>計算上は内部ランクSのゲリラ兵<strong>約37〜56人に1人</strong>。ただしミッション後の志願兵では、工作員なしでも<strong>右8項目オールSは未確認</strong>（最高はS7）</li>
-    <li>筆者の環境での工作員持ちの最高記録は、<strong>ゲリラ兵のS7個＋限りなくSに近いA1個（HYENA）</strong></li>
+    <li>計算上の確率は、ミッション後の志願兵1人あたり<strong>約0.08〜0.24%（約410〜1250人に1人）</strong>。ただし筆者は、工作員なしでも<strong>右8項目オールSは未確認</strong>（最高はS7）</li>
+    <li>筆者の環境での工作員持ちの最高記録は、<strong>ゲリラ兵のS7個＋限りなくSに近いA1個</strong></li>
   </ul>
 </section>
 
@@ -640,15 +640,25 @@
 <div class="formula">7.1% × 25〜38% ≈ <span class="r">1.8〜2.7%</span>（約37〜56人に1人）</div>
 
 <h3>志願兵1人あたり</h3>
-<p>英雄度カンストでは、内部ランクSになる確率を約90%とします（PSP版の解析の数値）。残る「ゲリラ兵が来る割合」はまだ数えていないので、割合ごとの目安を出しました。</p>
+<p>ここまでを全部掛け合わせます。ゲリラ兵が来る割合は5〜10%、内部ランクSになる確率は約90%（PSP版の解析の数値）と仮定します。</p>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>条件</th><th>確率</th></tr></thead>
+  <tbody>
+    <tr><td>ゲリラ兵が来る</td><td class="num">5〜10%</td></tr>
+    <tr><td>内部ランクSになる</td><td class="num">90%</td></tr>
+    <tr><td>右8項目オールS（士気最大）</td><td class="num">7.1%</td></tr>
+    <tr><td>工作員が付く</td><td class="num">25〜38%</td></tr>
+  </tbody>
+</table></div>
+<div class="formula">5〜10% × 90% × 7.1% × 25〜38% ≈ <span class="r">0.08〜0.24%</span></div>
 <div class="tbl-wrap"><table class="tbl">
   <thead><tr><th>ゲリラ兵の割合</th><th>志願兵1人あたりの確率</th><th>期待値で1体出るまで</th></tr></thead>
   <tbody>
-    <tr><td>5%</td><td class="num">約0.10%</td><td class="num">約990人</td></tr>
-    <tr><td>10%</td><td class="num">約0.20%</td><td class="num">約490人</td></tr>
-    <tr><td>20%</td><td class="num">約0.41%</td><td class="num">約250人</td></tr>
+    <tr><td>5%</td><td class="num">約0.08〜0.12%</td><td class="num">約820〜1250人</td></tr>
+    <tr><td>10%</td><td class="num">約0.16〜0.24%</td><td class="num">約410〜630人</td></tr>
   </tbody>
 </table></div>
+<p>つまり、工作員持ちの実戦Sランクは<strong>志願兵 約410〜1250人に1人</strong>の計算です。</p>
 
 <div class="box warn">
   <p><strong>疑問点</strong></p>
@@ -672,7 +682,7 @@
 <h2 id="conclusion">結論</h2>
 <div class="conclusion">
   <p>工作員持ちの実戦Sランクは、<strong>ゲリラ兵なら計算上はあり得ます</strong></p>
-  <p>偵察兵・整備兵は、ゲージの実測からCQC攻撃力がAで頭打ちと分かりました。ゲリラ兵は大きな乱数でCQC攻撃力もSになり、S7の個体が4人いました。そのうち工作員持ちのHYENAは、CQC攻撃力があと0.5%でSという、実戦Sランクの一歩手前です。計算上は内部ランクSのゲリラ兵の約37〜56人に1人ですが、ミッション後の志願兵では工作員なしでもオールSが未確認で、上限がある可能性も残っています。</p>
+  <p>偵察兵・整備兵は、ゲージの実測からCQC攻撃力がAで頭打ちと分かりました。ゲリラ兵は大きな乱数でCQC攻撃力もSになり、S7の個体が4人いました。そのうち工作員持ちのHYENAは、CQC攻撃力があと0.5%でSという、実戦Sランクの一歩手前です。計算上の確率は、志願兵1人あたり約0.08〜0.24%（約410〜1250人に1人）です。ミッション後の志願兵では工作員なしでもオールSが未確認で、上限がある可能性も残っています。</p>
   <p>狙うなら、<strong>英雄度を上げて、アマンダ・ミラー・パスで士気を最大にし、ミッション後の志願兵のゲリラ兵を見続ける</strong>のが唯一の方法です。</p>
 </div>
 </section>
