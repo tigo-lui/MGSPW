@@ -129,3 +129,5 @@ footer ul{padding-left:1.2em}
 }
 
 .tbl td:first-child{white-space:nowrap}
+.bar.rC i{background:var(--b);opacity:.6}
+.bar.rC b{color:var(--ink)}
