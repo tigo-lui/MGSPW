@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>【ピースウォーカー】工作員持ちの実戦Sランク完全検証｜入手条件・能力値アルゴリズム・確率【MGSPW マスターコレクション】</title>
-<meta name="description" content="MGSピースウォーカー（マスターコレクションVol.2・Switch 2版）で、工作員持ちの実戦Sランク兵士は手に入るのか。英雄度カンスト・ミッションクリア14,000回以上の検証データと海外の解析をもとに、工作員が付く条件、入手ルート、能力値とスキルのアルゴリズム、確率まで詳しく解説します。">
+<title>【ピースウォーカー】工作員持ちの実戦Sランク完全検証｜入手条件・能力値のメカニズム・確率【MGSPW マスターコレクション】</title>
+<meta name="description" content="MGSPW（メタルギアソリッド ピースウォーカー マスターコレクションVol.2・Switch 2版）で、工作員持ちの実戦Sランク兵士は手に入るのか。英雄度カンスト・ミッションクリア14,000回以上の検証データと海外の解析をもとに、工作員が付く条件、入手ルート、能力値とスキルのメカニズム、確率まで詳しく解説します。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【ピースウォーカー】工作員持ちの実戦Sランク完全検証">
-<meta property="og:description" content="工作員が付く条件、入手ルート、能力値とスキルのアルゴリズム、確率まで。マスターコレクションVol.2（Switch 2版）で、英雄度カンスト・ミッション14,000回以上の検証データをもとに解説。">
+<meta property="og:description" content="工作員が付く条件、入手ルート、能力値とスキルのメカニズム、確率まで。マスターコレクションVol.2（Switch 2版）で、英雄度カンスト・ミッション14,000回以上の検証データをもとに解説。">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
 <header class="hero">
   <p class="game">METAL GEAR SOLID PEACE WALKER<br><span style="white-space:nowrap">MASTER COLLECTION Vol.2</span> ／ <span style="white-space:nowrap">Nintendo Switch 2</span></p>
   <h1>工作員持ちの実戦Sランクを狙う</h1>
-  <p class="lead">大型兵器戦で活躍するスキル「工作員」。その持ち主で、実戦パラメータが全てSの兵士は手に入るのか。マスターコレクションVol.2のNintendo Switch 2版で、英雄度カンスト（999999）・ミッションクリア14,000回以上の検証データと、海外で解析された能力値・スキルのアルゴリズムをもとに、条件・入手ルート・確率まですべてまとめました。</p>
+  <p class="lead">大型兵器戦で活躍するスキル「工作員」。その持ち主で、実戦パラメータが全てSの兵士は手に入るのか。マスターコレクションVol.2のNintendo Switch 2版で、英雄度カンスト（999999）・ミッションクリア14,000回以上の検証データと、海外で解析された能力値・スキルのメカニズムをもとに、条件・入手ルート・確率まですべてまとめました。</p>
   <figure style="margin:0">
     <button class="frame" aria-label="MOUFLONのステータス画面を拡大"><img src="img/mouflon.jpg" alt="MOUFLONのステータス画面。ゲリラ兵、工作員・囮・腰巾着持ち"></button>
     <figcaption>工作員持ちの「ゲリラ兵」。実戦Sランクを狙える唯一の兵種です</figcaption>
@@ -33,19 +33,20 @@
     <li>工作員持ちの実戦Sランクを狙えるのは<strong>ゲリラ兵だけ</strong></li>
     <li>入手ルートは<strong>ミッション後の志願兵</strong>が本命</li>
     <li>壁は<strong>CQC攻撃力</strong>。ゲリラ兵ならSが出る</li>
-    <li>確率は内部ランクSのゲリラ兵1人あたり<strong>約0.08%（約1300人に1人）</strong>。理論上は可能だが、国内外ともに入手報告はまだない</li>
+    <li>偵察兵・整備兵はCQC攻撃力が<strong>どう引いてもAで頭打ち</strong>（ゲージ実測で確認）</li>
+    <li>計算上は内部ランクSのゲリラ兵<strong>約36〜56人に1人</strong>。ただしミッション後の志願兵では、工作員なしでも<strong>右8項目オールSは未確認</strong>（最高はゲリラ兵のS7）</li>
   </ul>
 </section>
 
 <section class="author" aria-labelledby="au">
   <h2 id="au">この記事を書いた人</h2>
   <div class="author-body">
-    <button class="frame" aria-label="プレイヤーデータを拡大"><img src="img/profile.jpg" alt="プレイヤーデータ。英雄度999999、クリアミッション数14118、CO-OPSクリア数233"></button>
+    <button class="frame" aria-label="プレイヤーデータを拡大"><img src="img/profile.jpg" alt="プレイヤーデータ。英雄度999999、クリアミッション数14655、CO-OPSクリア数233"></button>
     <div>
       <p class="au-name">tigo</p>
       <dl class="stats">
         <div><dt>英雄度</dt><dd>999999</dd></div>
-        <div><dt>クリアミッション数</dt><dd>14118</dd></div>
+        <div><dt>クリアミッション数</dt><dd>14655</dd></div>
         <div><dt>CO-OPSクリア数</dt><dd>233</dd></div>
         <div><dt>プレイ環境</dt><dd class="env">マスターコレクションVol.2（Nintendo Switch 2版）</dd></div>
       </dl>
@@ -59,16 +60,15 @@
   <ol>
     <li><a href="#effect">工作員の効果</a></li>
     <li><a href="#screen">兵士画面の見方と「実戦Sランク」</a></li>
-    <li><a href="#algo">能力値のアルゴリズム</a></li>
-    <li><a href="#skill">スキルのアルゴリズム</a></li>
+    <li><a href="#algo">能力値のメカニズム</a></li>
+    <li><a href="#skill">スキルのメカニズム</a></li>
     <li><a href="#classes">兵種ごとの可能性</a></li>
     <li><a href="#routes">入手ルートの評価</a></li>
     <li><a href="#recruit">リクルートとコマンド兵</a></li>
     <li><a href="#data">検証データ</a></li>
+    <li><a href="#measure">ゲージの実測</a></li>
     <li><a href="#prob">確率の計算</a></li>
     <li><a href="#morale">士気を上げる方法</a></li>
-    <li><a href="#growth">パラメータの成長について</a></li>
-    <li><a href="#weapons">OUTER OPSでの兵種ごとの武器</a></li>
     <li><a href="#conclusion">結論</a></li>
   </ol>
 </nav>
@@ -103,6 +103,7 @@
 
 <h3>一番右の人型アイコン</h3>
 <p>士気の段階を表すアイコンです。加入直後は矢印1本で、士気が上がるにつれて矢印が増え、オレンジのゲージも伸びます。4重矢印が最大です（筆者検証）。</p>
+<p>ゲージを実測すると、士気最大（4重矢印）のオレンジ部分は<strong>素の値の約20%</strong>でした。つまり士気最大で<strong>素の値×1.2</strong>になります（詳しくは<a href="#measure">ゲージの実測</a>）。</p>
 <p>下は、加入直後の偵察兵FENNEC（矢印1本）と、士気が最大の偵察兵CIVET（4重矢印）の比較です。CIVETはどの項目もオレンジの部分が長く、士気ボーナスが大きく乗っているのが分かります。</p>
 <div class="pair">
   <figure style="margin:0">
@@ -117,7 +118,7 @@
 </section>
 
 <section>
-<h2 id="algo">能力値のアルゴリズム</h2>
+<h2 id="algo">能力値のメカニズム</h2>
 <p>海外の攻略掲示板GameFAQsに、PSP版の兵士の能力値の計算方法を解析した投稿があります。マスターコレクション版でも同じ仕組みと仮定すると、これまでの検証結果がかなりきれいに説明できます。</p>
 
 <h3>計算の流れ</h3>
@@ -163,16 +164,17 @@
   </tbody>
 </table></div>
 <p><strong>CQCの基本値が一番低いため、ここが実戦Sランクの最大の壁</strong>です。これまでの工作員持ちがCQC攻撃力Aで止まっていたこととも一致します。</p>
+<p class="note">これは士気なしの計算です。士気最大（×1.2）を入れると、CQCは+4%以上でSになります（<a href="#prob">確率の計算</a>）。</p>
 
 <h3>乱数は項目ごとに別々</h3>
 <p>解析の書き方だと乱数は全項目共通にも読めますが、筆者のゲリラ兵にはCQCがS（+25%以上）なのに防御がB（−11%以下）の個体がいます。そのため、<strong>乱数は項目ごとに別々にかかっている</strong>と考えられます。</p>
 
 <h3>ゲリラ兵以外の乱数</h3>
-<p>解析では「±40%の乱数があるのはゲリラ兵だけ」とされています。ただ、ミッション後の志願兵では偵察兵・整備兵でも右端2つに個体差があったので、筆者は<strong>ゲリラ兵以外にも小さめの乱数がある</strong>と考えています。</p>
+<p>解析では「±40%の乱数があるのはゲリラ兵だけ」とされています。ゲージを実測すると、偵察兵・整備兵にも個体差はありましたが、その幅は<strong>ゲリラ兵よりずっと小さい</strong>ことが分かりました（<a href="#measure">ゲージの実測</a>）。</p>
 </section>
 
 <section>
-<h2 id="skill">スキルのアルゴリズム</h2>
+<h2 id="skill">スキルのメカニズム</h2>
 <p>同じ解析によると、スキルは<strong>内部ランクと兵種</strong>で決まります。兵種ごとに覚えられるスキルが決まっていて、それ以外のスキルは絶対に付きません。</p>
 
 <h3>内部ランクごとのスキル数</h3>
@@ -217,9 +219,34 @@
 <div class="classes">
   <div><div class="rank ok">◎</div><div class="cls">ゲリラ兵</div><div class="desc">大きな乱数があり、CQC攻撃力もSになる。唯一の本命</div></div>
   <div><div class="rank ng">×</div><div class="cls">コマンダー</div><div class="desc">リロードが必ずBなので実戦Sランクになれない</div></div>
-  <div><div class="rank ng">×</div><div class="cls">偵察兵</div><div class="desc">CQC攻撃力が最高A。防御もBが多い</div></div>
-  <div><div class="rank ng">×</div><div class="cls">整備兵</div><div class="desc">防御はSになるが、CQC攻撃力が最高A</div></div>
+  <div><div class="rank ng">×</div><div class="cls">偵察兵</div><div class="desc">CQC・防御の素の値が最高878。Sに必要な1042に届かない</div></div>
+  <div><div class="rank ng">×</div><div class="cls">整備兵</div><div class="desc">防御はSになるが、CQCの素の値が最高878でAどまり。射撃も届かない</div></div>
 </div>
+
+<h3>ゲリラ兵以外がSに届かない理由</h3>
+<p>右8項目の値は、次の掛け算で決まります。</p>
+<div class="formula">表示される値 ＝ 基本値 ×（1＋乱数）× 内部ランク倍率（最大5）× 士気（最大1.2）</div>
+<p>内部ランクSで士気最大なら、倍率は最大で5×1.2＝<strong>6倍</strong>です。Sには1250が必要なので、</p>
+<div class="formula">基本値 ×（1＋乱数） ≥ 1250 ÷ 6 ≈ <span class="r">208</span></div>
+<p>を満たせないと、内部ランクや士気をどれだけ上げてもSにはなりません。兵種ごとに当てはめるとこうなります。</p>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>兵種</th><th>項目</th><th>基本値×（1＋乱数）</th><th>最大×6</th><th>判定</th></tr></thead>
+  <tbody>
+    <tr><td>ゲリラ兵</td><td>CQC</td><td>200×（1±0.4）＝120〜280</td><td class="num">1680</td><td>S可</td></tr>
+    <tr><td>ゲリラ兵</td><td>防御</td><td>225×（1±0.4）＝135〜315</td><td class="num">1890</td><td>S可</td></tr>
+    <tr class="hl"><td>偵察兵</td><td>CQC・防御</td><td>138〜176（実測）</td><td class="num">1054</td><td>Aどまり</td></tr>
+    <tr class="hl"><td>整備兵</td><td>CQC</td><td>145〜176（実測）</td><td class="num">1054</td><td>Aどまり</td></tr>
+    <tr class="hl"><td>整備兵</td><td>射撃</td><td>138〜181（実測）</td><td class="num">1085</td><td>Aどまり</td></tr>
+  </tbody>
+</table></div>
+<p class="note">偵察兵・整備兵の値は、<a href="#measure">ゲージの実測</a>で読み取った素の値を5（内部ランクSの倍率）で割ったものです。</p>
+<p>ポイントは2つあります。</p>
+<ul>
+  <li><strong>基本値そのものが低い</strong>：偵察兵・整備兵のCQCは、実測の最大でも176で、必要な208より<strong>約19%</strong>足りません。</li>
+  <li><strong>乱数の幅が小さい</strong>：ゲリラ兵は±40%の乱数で基本値を大きく超えられますが、偵察兵・整備兵の値は狭い範囲に集中していて、19%も上振れする余地がありません。</li>
+</ul>
+<p>つまり、ゲリラ兵は「基本値は低めでも、大きな乱数で208を超えられる」のに対し、偵察兵・整備兵は「基本値も低く、乱数でも届かない」ため、<strong>CQCはどう引いてもAで頭打ち</strong>になります。整備兵は射撃も同じ理由でAどまりです。</p>
+<p>コマンダーは、PSP版の掲示板で「リロードが必ずB」と報告されていて、同じく基本値の段階でSに届かないと考えられます（筆者は未確認）。</p>
 </section>
 
 <section>
@@ -240,7 +267,7 @@
   <div>
     <h3>OUTER OPS「敵拠点の制圧02(SS)」</h3>
     <p>高ランクの工作員持ち（偵察兵タイプ）は来ますが、何度周回しても右端2つ（CQC攻撃力・防御力）が<strong>必ずB〜C</strong>になるため、実戦Sランクは狙えません。</p>
-    <p>アルゴリズムから考えると、偵察兵のCQC・防御の基本値が低めで、ゲリラ兵ほど大きな乱数もかからないため、内部ランクがSやAでも計算結果がBの範囲に収まってしまうのだと推測できます。02は来る兵士の内部ランクがほぼ一定なので、毎回同じB止まりになっているのかもしれません。</p>
+    <p>メカニズムから考えると、偵察兵のCQC・防御の基本値が低めで、ゲリラ兵ほど大きな乱数もかからないため、内部ランクがSやAでも計算結果がBの範囲に収まってしまうのだと推測できます。02は来る兵士の内部ランクがほぼ一定なので、毎回同じB止まりになっているのかもしれません。</p>
   </div>
 </div>
 
@@ -287,7 +314,7 @@
 
 <section>
 <h2 id="data">検証データ</h2>
-<p>英雄度カンスト・士気最大の状態で、右8項目を比較しました。何人かピックアップして掲載します。すべてミッション後の志願兵です。各グループの1番目の兵士だけを表示しています。ボタンを押すと残りの兵士も見られます。画像をタップすると元のステータス画面を拡大できます。</p>
+<p>英雄度カンスト・士気最大の状態で、右8項目を比較しました。すべてミッション後の志願兵です。各グループの1番目の兵士だけを表示しています。ボタンを押すと残りの兵士も見られます。画像をタップすると元のステータス画面を拡大できます。</p>
 <div class="legend">
   <span><i class="sw" style="background:var(--red)"></i>S</span>
   <span><i class="sw" style="background:var(--a)"></i>A</span>
@@ -376,7 +403,7 @@
 </div>
 </details>
 <ul>
-  <li>S数の最高は6個。<strong>CIVETはBが1つもなく、工作員持ちで一番能力が高い</strong></li>
+  <li>S数の最高は6個。<strong>CIVETはBが1つもなく、工作員持ちで最強</strong></li>
   <li><strong>CQC攻撃力は全員最高でもA</strong></li>
   <li>整備兵は防御が全員S、偵察兵は防御がBになりやすい</li>
   <li>偵察兵は左5項目がA C B C S、整備兵はA S B C Cでほぼ固定</li>
@@ -436,38 +463,92 @@
 </section>
 
 <section>
-<h2 id="prob">確率の計算</h2>
-<p>「<strong>内部ランクSのゲリラ兵が1人来たとき</strong>」に、工作員持ちの実戦Sランクになる確率を計算しました。</p>
+<h2 id="measure">ゲージの実測</h2>
+<p>スクショのゲージの長さを1ピクセル単位で測り、能力値に直しました。対象は検証データの11人（士気最大）です。</p>
 
-<h3>実戦Sランクになる確率</h3>
-<p>乱数が−40%〜+40%で均等に、項目ごとに別々に出ると仮定します。各項目がSになる確率は「必要な乱数から+40%までの幅 ÷ 全体の幅80%」です。</p>
+<h3>目盛り</h3>
+<p>ゲージは下端が0、上端が<strong>1250（Sの境目）</strong>で、1ピクセルは約6.65ポイントです。この目盛りで読むと、全員のS・A・Bの表示と矛盾なく一致しました（1000以上でA、750以上でB）。Sの項目は上端で頭打ちになるので、1250以上の値は読めません。</p>
+
+<h3>士気ボーナスは×1.2</h3>
+<p>4重矢印の兵士で「赤＋オレンジ」÷「赤」を29か所測ると、<strong>1.17〜1.23（平均1.198）</strong>でした。士気最大のボーナスは、足し算ではなく<strong>素の値の約1.2倍</strong>です。</p>
+<div class="formula">素の値 ≥ 1250 ÷ 1.2 ≈ <span class="r">1042</span> なら、士気込みでS</div>
+
+<h3>ゲリラ兵は解析どおり</h3>
+<p>ゲリラ兵4人の素の値を「基本値×5」で割ると、乱数は<strong>−36%〜+17%</strong>に収まりました。±40%の範囲内なので、4人とも内部ランクSのゲリラ兵と考えて矛盾しません。</p>
 <div class="tbl-wrap"><table class="tbl">
-  <thead><tr><th>項目</th><th>必要な乱数</th><th>計算</th><th>確率</th></tr></thead>
+  <thead><tr><th>兵士</th><th>CQCの素の値</th><th>乱数</th><th>防御の素の値</th></tr></thead>
   <tbody>
-    <tr><td>射撃など6項目</td><td>−9%以上</td><td>49÷80</td><td class="num">61.4%</td></tr>
-    <tr><td>防御</td><td>+11%以上</td><td>29÷80</td><td class="num">36.1%</td></tr>
-    <tr class="hl"><td>CQC</td><td>+25%以上</td><td>15÷80</td><td class="num">18.8%</td></tr>
+    <tr><td>SEA PERCH</td><td class="num">1170</td><td>+17%</td><td class="num">745</td></tr>
+    <tr><td>ANTEATER</td><td class="num">1090</td><td>+9%</td><td>1250以上</td></tr>
+    <tr><td>TARPON</td><td class="num">1064</td><td>+6%</td><td class="num">984</td></tr>
+    <tr><td>MOUFLON</td><td class="num">798</td><td>−20%</td><td>1250以上</td></tr>
   </tbody>
 </table></div>
-<div class="formula">0.614⁶ × 0.361 × 0.188 ≈ <span class="r">0.36%</span>（約280人に1人）</div>
+
+<h3>偵察兵・整備兵はCQCがSに届かない</h3>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>兵種</th><th>CQCの素の値</th><th>防御の素の値</th></tr></thead>
+  <tbody>
+    <tr><td>偵察兵4人</td><td class="num">691〜878</td><td class="num">691〜878</td></tr>
+    <tr><td>整備兵3人</td><td class="num">725〜878</td><td>1064〜1250以上</td></tr>
+    <tr class="hl"><td>Sに必要な値</td><td class="num">1042</td><td class="num">1042</td></tr>
+  </tbody>
+</table></div>
+<p>CQCの最高はCIVETの<strong>878</strong>で、士気込みでも1054のAです。Sまではあと<strong>19%</strong>足りません。</p>
+<p>しかも、偵察兵・整備兵のCQC・防御の11か所は、691〜878という<strong>狭い範囲</strong>に集中していました。もし±40%の乱数があるなら、11個がこの幅に収まる確率は<strong>約0.005%</strong>しかありません。つまりこの2兵種の乱数はゲリラ兵よりずっと小さく、19%も上振れすることはまず起きないと考えられます。整備兵は射撃も691〜904で、同じくAに届きません。</p>
+<p class="note">残る可能性は「偵察兵にも内部ランクがAとSの個体が混ざっていて、CIVETより高い個体が別にいる」場合ですが、英雄度カンストでは大半が内部ランクSと考えられるので、可能性は低いです。</p>
+
+<h3>左端の戦闘適性</h3>
+<p>手持ちの志願兵13人は、兵種に関係なく<strong>全員、左端の戦闘適性がA</strong>でした。内部ランクSと考えられるゲリラ兵も同じなので、ミッション後の志願兵では戦闘適性がAで止まる仕様があるのかもしれません。なお、この記事の「実戦Sランク」は右8項目の話で、左端の戦闘適性とは別物です。</p>
+</section>
+
+<section>
+<h2 id="prob">確率の計算</h2>
+<p>実際に狙うときに知りたいのは、「<strong>志願兵を1人見たとき、工作員持ちの実戦Sランクが来る確率</strong>」です。次の4つを掛け合わせて計算します。</p>
+<div class="formula">ゲリラ兵が来る確率 × 内部ランクSの確率 × 工作員が付く確率 × 右8項目オールSの確率</div>
+
+<h3>右8項目オールSになる確率（士気込み）</h3>
+<p>内部ランクSのゲリラ兵で、乱数が−40%〜+40%で均等に、項目ごとに別々に出ると仮定します。士気×1.2を入れると、各項目は素の値1042以上でSです。</p>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>項目</th><th>基本値×5</th><th>必要な乱数</th><th>確率</th></tr></thead>
+  <tbody>
+    <tr><td>射撃など6項目</td><td class="num">1375</td><td>−24%以上</td><td class="num">80%</td></tr>
+    <tr><td>防御</td><td class="num">1125</td><td>−7%以上</td><td class="num">59%</td></tr>
+    <tr class="hl"><td>CQC</td><td class="num">1000</td><td>+4%以上</td><td class="num">45%</td></tr>
+  </tbody>
+</table></div>
+<div class="formula">0.80⁶ × 0.59 × 0.45 ≈ <span class="r">7.1%</span>（約14人に1人）</div>
+<p class="note">士気を入れずに計算すると0.36%になりますが、実際には士気で大きく底上げされるので、こちらが実態に近い数字です。</p>
 
 <h3>工作員が付く確率</h3>
-<p>スキル数の表から、内部ランクSの兵士が持つスキルは平均で約1.5個（0.8＋0.48＋0.192＋0.038）。ゲリラ兵が覚えるスキルは7種類なので：</p>
-<div class="formula">1.51 ÷ 7 ≈ <span class="r">22%</span></div>
+<p>PSP版の解析では内部ランクSのスキル数は平均1.5個ですが、手持ちの志願兵11人の平均は<strong>2.8個</strong>で、マスターコレクション版の志願兵はスキルが多めのようです。ゲリラ兵が覚える7種類から2〜3個付くとすると：</p>
+<div class="formula">工作員が付く確率 ≈ <span class="r">25〜39%</span></div>
+<p class="note">手持ちのゲリラ兵では4人中1人（25%）、平均2.75個÷7種類で39%として幅を取っています。</p>
 
-<h3>合計</h3>
-<div class="formula">0.36% × 22% ≈ <span class="r">0.08%</span>（約1300人に1人）</div>
+<h3>内部ランクSのゲリラ兵1人あたり</h3>
+<div class="formula">7.1% × 25〜39% ≈ <span class="r">1.8〜2.8%</span>（約36〜56人に1人）</div>
+
+<h3>志願兵1人あたり</h3>
+<p>英雄度カンストでは、内部ランクSになる確率を約90%とします（PSP版の解析の数値）。残る「ゲリラ兵が来る割合」はまだ数えていないので、割合ごとの目安を出しました。</p>
+<div class="tbl-wrap"><table class="tbl">
+  <thead><tr><th>ゲリラ兵の割合</th><th>志願兵1人あたりの確率</th><th>期待値で1体出るまで</th></tr></thead>
+  <tbody>
+    <tr><td>5%</td><td class="num">約0.10%</td><td class="num">約970人</td></tr>
+    <tr><td>10%</td><td class="num">約0.21%</td><td class="num">約480人</td></tr>
+    <tr><td>20%</td><td class="num">約0.41%</td><td class="num">約240人</td></tr>
+  </tbody>
+</table></div>
 
 <div class="box warn">
-  <p><strong>この計算の注意点</strong></p>
-  <p>この計算には士気ボーナスが入っていません。実際には士気でAがSに上がる項目もあるので、確率はもう少し高くなると考えられます。</p>
-  <p>また、これは「内部ランクSのゲリラ兵が来た場合」の確率です。志願兵全体から見ると、ゲリラ兵が来る確率と、内部ランクSになる確率の分だけさらに下がります。</p>
+  <p><strong>疑問点</strong></p>
+  <p>この計算では、工作員を気にしなければ内部Sゲリラ兵の約14人に1人が右8項目オールSになるはずです。ところが筆者は、ミッション後の志願兵を1000回以上見ても、<strong>工作員なしでも士気込みオールSを一度も見ていません</strong>（最高はS7が2人）。</p>
+  （そもそものゲリラ兵の確率が不明なので何とも言えませんが。）</p>
 </div>
 </section>
 
 <section>
 <h2 id="morale">士気を上げる方法</h2>
-<p>士気が上がるとオレンジの補正が伸び、Aの項目がSに届くこともあります。</p>
+<p>士気最大で素の値が約1.2倍になり、Aの項目がSに届くこともあります。確率の計算でも分かるとおり、実戦Sランクを狙うなら<strong>士気最大は必須</strong>です。</p>
 <ul>
   <li><strong>糧食班を充実させる</strong>：食糧供給率が100%を超えると士気が上がります。</li>
   <li><strong>ミラーを同じ班に入れる</strong>：ミラー専用スキル「マザーベース副司令」で、配属した班の全スタッフの士気がアップします。</li>
@@ -477,35 +558,17 @@
 </section>
 
 <section>
-<h2 id="growth">パラメータの成長について</h2>
-<p>士気以外で右8項目を伸ばす方法は確認できていません。OUTER OPSに出撃させて伸びるのはLIFE・MNTL・GMPで、パラメータは伸びないようです。つまり、<strong>志願してきた時点の能力がほぼ最終形</strong>です。</p>
-</section>
-
-<section>
-<h2 id="weapons">OUTER OPSでの兵種ごとの武器</h2>
-<div class="tbl-wrap"><table class="tbl">
-  <thead><tr><th>兵種</th><th>武器</th></tr></thead>
-  <tbody>
-    <tr><td>コマンダー・ゲリラ兵</td><td>WA2000、M47</td></tr>
-    <tr><td>コマンド兵・エリートコマンド兵</td><td>カンプピストル、M47</td></tr>
-    <tr><td>偵察兵</td><td>M134、グレネード</td></tr>
-  </tbody>
-</table></div>
-<p>兵士に対する最大ダメージはM47が20000、M134が15000、カンプピストルが12000とされていて、ゲリラ兵は火力面でも有利です。</p>
-</section>
-
-<section>
 <h2 id="conclusion">結論</h2>
 <div class="conclusion">
-  <p>工作員持ちの実戦Sランクは、<strong>ゲリラ兵なら理論上あり得ます</strong>。</p>
-  <p>ゲリラ兵は大きな乱数によってCQC攻撃力もSになり、S7の個体も確認できています。工作員付きのゲリラ兵（MOUFLON）も実在します。ただし、内部ランクSのゲリラ兵でも確率は約0.08%（士気なしの計算）と低く、国内外ともにまだ入手報告はありません。</p>
+  <p>工作員持ちの実戦Sランクは、<strong>ゲリラ兵なら計算上はあり得ます</strong></p>
+  <p>偵察兵・整備兵は、ゲージの実測からCQC攻撃力がAで頭打ちと分かりました。ゲリラ兵は大きな乱数でCQC攻撃力もSになり、S7の個体も確認できています。工作員付きのゲリラ兵（MOUFLON）も実在します。計算上は内部ランクSのゲリラ兵の約36〜56人に1人ですが、ミッション後の志願兵では工作員なしでもオールSが未確認で、上限がある可能性も残っています。</p>
   <p>狙うなら、<strong>英雄度を上げて、アマンダ・ミラー・パスで士気を最大にし、ミッション後の志願兵のゲリラ兵を見続ける</strong>のが唯一の方法です。</p>
 </div>
 </section>
 
 <footer>
   <p class="contact">筆者：tigo（X：<a href="https://x.com/szk_saj" rel="me noopener" target="_blank">@szk_saj</a>）<br>情報提供や、工作員持ちの実戦Sランクを見つけた方はぜひご連絡ください。</p>
-  <p>※検証はすべてマスターコレクションVol.2（Nintendo Switch 2版）で行っています。能力値・スキルのアルゴリズムはPSP版の解析で、マスターコレクション版で同じかは未確定です。ゲージの色や士気アイコンの意味、兵種ごとの傾向、確率計算などは筆者の検証による推測を含みます。</p>
+  <p>※検証はすべてマスターコレクションVol.2（Nintendo Switch 2版）で行っています。能力値・スキルのメカニズムはPSP版の解析で、マスターコレクション版で同じかは未確定です。ゲージの実測値はスクショからの読み取りで、数ポイントの誤差があります。士気アイコンの意味、兵種ごとの傾向、確率計算などは筆者の検証による推測を含みます。</p>
   <p>参考</p>
   <ul>
     <li><a href="https://gamefaqs.gamespot.com/boards/960566-metal-gear-solid-peace-walker/56674265">GameFAQs：Best Possible Combat Soldier（能力値・スキルの解析）</a></li>
